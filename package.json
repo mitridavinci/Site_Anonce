@@ -1,0 +1,15 @@
+{
+  "name": "siteannoncedepart",
+  "version": "1.0.0",
+  "description": "Project Anonce de depart",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "sass":"sass --watch scss/global.scss styles/style.css"
+  },
+  "author": "Diallo Thierno Souleyman",
+  "license": "ISC",
+  "dependencies": {
+    "sass": "^1.58.3"
+  }
+}

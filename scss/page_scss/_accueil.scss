@@ -1,0 +1,516 @@
+body {
+  font-family: Roboto, Arial, Helvetica, sans-serif;
+  position: relative;
+  min-height: 100vh;
+}
+
+// --------------------------Navigation -----------------------
+
+nav {
+  width: 100%;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo-nav {
+  font-size: 30px;
+  padding-left: 20px;
+}
+
+nav ul {
+  list-style-type: none;
+  @extend %flex-double-centre;
+}
+nav li {
+  margin: 0 20px;
+}
+
+nav a {
+  text-decoration: none;
+  color: #000;
+  font-size: 25px;
+}
+
+nav li a::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 1px;
+  position: relative;
+  top: 5px;
+  background: #000;
+  transform: scale(0);
+  transition: transform 0.2s ease-in-out;
+}
+
+nav li a:hover::after {
+  transform: scale(1);
+}
+
+.lien-essai {
+  font-size: 20px;
+  font-weight: bold;
+  text-decoration: none;
+  margin-right: 20px;
+  padding: 15px;
+  border-radius: 15px;
+  color: #fff;
+  background: linear-gradient(45deg, $violet-principal, rgb(50, 151, 168));
+}
+
+.responsive-nav-btn {
+  display: none;
+  position: absolute;
+  top: 10px;
+  right: 0px;
+  width: 50px;
+  height: 50px;
+  border: none;
+  outline: none;
+  background: transparent;
+}
+
+@media screen and (max-width: 950px) {
+  .responsive-nav-btn {
+    display: block;
+  }
+  nav {
+    justify-content: center;
+    flex-direction: column;
+    height: auto;
+    position: absolute;
+    top: -5px;
+    border-bottom:1px solid #000;
+  }
+  nav ul{
+    width: 100%;
+    background: #fff;
+    flex-direction: column;
+    border-bottom: 1px solid #000;
+    display: none;
+  }
+
+  .logo-nav{
+    padding-left: 0;
+    width: 100%;
+    background: #fff;
+    text-align: center;
+    height: 70px;
+    line-height: 70px;
+  }
+
+  nav ul li{
+    height: 70px;
+    line-height: 70px;
+  }
+
+  .lien-essai{
+    display: none;
+  }
+    .active-nav{
+        display: flex;
+    }
+}
+// --------------------------Container Global -----------------------
+.container-global{
+  padding-bottom: 400px;
+}
+
+//--------------------------Accueil --------------------------------
+.accueil{
+  width: 100%;
+  height: 900px;
+  @extend %flex-double-centre;
+  flex-direction: column;
+  padding: 50px 0 75px;
+}
+
+.titre-global{
+  @extend %titre-global;
+}
+.sous-titre{
+  text-align: center;
+  font-size: 32px;
+  padding-bottom: 20px;
+  line-height: 1.2;
+}
+
+.accueil img{
+  width: 1000px;
+}
+
+
+@media screen and (max-width: 1100px) {
+  .accueil{
+    padding: 0px 0px 0px;
+    height: 700px;
+  }
+
+  .accueil img{
+    width: 700px;
+  }
+  .sous-titre{
+    font-size: 27px;
+  }
+}
+
+
+@media screen and (max-width: 950px){
+  .accueil{
+    padding: 100px 0 0px;
+  }
+}
+
+
+@media screen and (max-width:750px){
+
+  .accueil{
+    padding: 100px 0 50px;
+    height: 500px;
+  }
+
+  .accueil img{
+    width: 500px;
+  }
+
+  .sous-titre{
+    font-size: 24px;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .accueil {
+      padding: 75px 0 0px;
+      height: 400px;
+  }
+  .accueil img{
+    width: 400px;
+  }
+
+  .sous-titre{
+    font-size: 18px;
+  }
+}
+
+
+@media screen and (max-width: 450px) {
+  .accueil {
+      padding: 75px 0 0px;
+      height: 400px;
+  }
+  .accueil img{
+    width: 320px;
+  }
+
+  .sous-titre{
+    font-size: 18px;
+  }
+}
+
+
+//--------------------------Performances--------------------------------
+
+.container-performances{
+  padding: 120px 20px 170px;
+  margin-bottom: 100px;
+  clip-path: polygon(0 0, 100% 17%, 100% 100%, 0 82%);
+  background-image: linear-gradient(45deg, rgba(255,250,233, 0.53) 0%,
+                                            rgba(255,250,233, 0.53) 14.286%,
+                                            rgba(221, 240, 216, 0.53) 14.286%, 
+                                            rgba(221, 240, 216, 0.53) 28.572%,
+                                            rgba(188, 233, 223, 0.53) 28.572%, 
+                                            rgba(188, 233, 223, 0.53) 42.858%,
+                                            rgba(156, 227, 229, 0.53) 42.858%, 
+                                            rgba(156, 227, 229, 0.53) 57.144%,
+                                            rgba(123, 220, 235, 0.53) 57.144%, 
+                                            rgba(123, 220, 235, 0.53) 71.42999999999999%,
+                                            rgba(90, 214, 242, 0.53) 71.43%, 
+                                            rgba(90, 214, 242, 0.53) 85.71600000000001%,
+                                            rgba(57, 207, 248, 0.53) 85.716%, 
+                                            rgba(57, 207, 248, 0.53) 100.002%),
+                     linear-gradient(135deg, rgb(246, 99, 200) 0%,
+                                             rgb(246, 99, 200) 12.5%,
+                                             rgb(223, 98, 196) 12.5%,
+                                             rgb(223, 98, 196) 25%,
+                                             rgb(199, 97, 192) 25%, 
+                                             rgb(199, 97, 192) 37.5%,
+                                             rgb(210,129,221) 37.5%, 
+                                             rgb(210,129,221) 50%,
+                                             rgb(229,184,255) 50%, 
+                                             rgb(229,184,255) 62.5%,
+                                             rgb(201,166,254) 62.5%, 
+                                             rgb(201,166,254) 75%,
+                                             rgb(112,97,190) 75%, 
+                                             rgb(112,97,190) 87.5%,
+                                             rgb(82, 92, 172) 87.5%, 
+                                             rgb(82, 92, 172) 100%);
+}
+
+
+.separation {
+  margin: 0 auto 70px;
+  height: 2px;
+  width: 300px;
+  border-radius: 3px;
+  background: #000;
+  border: none;
+}
+
+
+.container-boxs{
+  width: 100%;
+  @extend %flex-double-centre;
+}
+
+.box{
+  margin: 0 50px;
+}
+
+.box p{
+  text-align: center;
+}
+
+.nombres-clients{
+  font-size: 85px;
+  padding-bottom: 10px;
+}
+
+.type-de-clients{
+  font-size: 30px;
+  padding-bottom: 10px;
+  font-weight: bold;
+}
+
+.info-clients{
+  font-size: 20px;
+}
+
+@media screen and (max-width:1000px) {
+  .nombres-clients{
+    font-size: 80px;
+  }
+}
+
+
+@media screen and (max-width:750px) {
+  .container-performances{
+    padding: 175px 20px 150px;
+  }
+
+  .container-boxs{
+    flex-direction: column;
+  }
+  .box{
+    margin: 20px 0;
+  }
+  .separation{
+    margin: 0 auto 30px;
+    width: 30%;
+  }
+  .nombres-clients{
+    font-size: 80px;
+  }
+  .type-de-clients{
+    font-size: 25px;
+  }
+
+  .info-clients{
+    width: 100%;
+    font-size: 22px;
+  }
+}
+
+@media screen and (max-width:650px) {
+  .container-performances{
+    padding: 135px 20px 150px;
+  }
+
+  .nombres-clients{
+    font-size: 50px;
+  }
+
+  .type-de-clients{
+    font-size: 22px;
+  }
+
+  .info-clients{
+    width: 100%;
+    font-size: 20px;
+  }
+
+}
+
+
+//--------------------------FAQ--------------------------------
+
+.container-faq{
+  width: 70%;
+  max-width: 900px;
+  min-width: 300px;
+  height: auto;
+  margin: 10px auto 150px;
+  @extend %flex-double-centre;
+  flex-direction: column;
+}
+
+.questions{
+  width: 100%;
+  height: auto;
+  margin: 5px;
+}
+
+.panneau-visible{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #f1f1f1;
+  border-radius: 10px;
+  position: relative;
+  z-index: 100;
+}
+
+.titre-question{
+  margin-left: 10px;
+  padding: 15px 5px;
+  font-size: 25px;
+}
+
+.panneau-visible img{
+  margin-right: 10px;
+  width: 25px;
+  cursor: pointer;
+}
+
+.toggle-pannel{
+  padding: 0 15px;
+  height: 0;
+  opacity: 0;
+  transition: all 0.2s ease-in-out;
+}
+
+.toggle-pannel h4{
+  font-size: 22px;
+  padding-bottom: 10px;
+}
+
+.toggle-pannel p{
+  font-size: 18px;
+  line-height: 1.5;
+}
+
+@media screen and (max-width: 750px) {
+    .container-faq{
+      width: 90px;
+    }
+
+    .titre-question{
+      margin-left: 10px;
+      font-size: 18px;
+    }
+}
+
+
+//--------------------------Appel a l'action--------------------------------
+
+.container-cta{
+  padding: 150px 0 100px;
+  clip-path: polygon(0% 17%, 100% 0%, 100% 82%, 0% 100%);
+  background-image: linear-gradient(45deg, rgba(255,250,233, 0.53) 0%,
+  rgba(255,250,233, 0.53) 14.286%,
+  rgba(221, 240, 216, 0.53) 14.286%, 
+  rgba(221, 240, 216, 0.53) 28.572%,
+  rgba(188, 233, 223, 0.53) 28.572%, 
+  rgba(188, 233, 223, 0.53) 42.858%,
+  rgba(156, 227, 229, 0.53) 42.858%, 
+  rgba(156, 227, 229, 0.53) 57.144%,
+  rgba(123, 220, 235, 0.53) 57.144%, 
+  rgba(123, 220, 235, 0.53) 71.42999999999999%,
+  rgba(90, 214, 242, 0.53) 71.43%, 
+  rgba(90, 214, 242, 0.53) 85.71600000000001%,
+  rgba(57, 207, 248, 0.53) 85.716%, 
+  rgba(57, 207, 248, 0.53) 100.002%),
+linear-gradient(135deg, rgb(246, 99, 200) 0%,
+   rgb(246, 99, 200) 12.5%,
+   rgb(223, 98, 196) 12.5%,
+   rgb(223, 98, 196) 25%,
+   rgb(199, 97, 192) 25%, 
+   rgb(199, 97, 192) 37.5%,
+   rgb(210,129,221) 37.5%, 
+   rgb(210,129,221) 50%,
+   rgb(229,184,255) 50%, 
+   rgb(229,184,255) 62.5%,
+   rgb(201,166,254) 62.5%, 
+   rgb(201,166,254) 75%,
+   rgb(112,97,190) 75%, 
+   rgb(112,97,190) 87.5%,
+   rgb(82, 92, 172) 87.5%, 
+   rgb(82, 92, 172) 100%);
+}
+
+.txt-cta{
+  text-align: center;
+  font-size: 22px;
+  padding: 0 10px;
+}
+
+.btn-appel{
+  display: block;
+  color: #f1f1f1;
+  font-size: 24px;
+  text-align: center;
+  text-decoration: none;
+  margin: 30px auto;
+  width: 250px;
+  padding: 20px;
+  border-radius: 9999px;
+  background: $violet-principal;
+}
+
+@media screen and (max-width: 750px) {
+    .txt-cta{
+      font-size: 18px;
+    }
+
+    .btn-appel{
+      width: 200px;
+    }
+}
+
+footer{
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 300px;
+  border-top: 1px dashed #000;
+  color: #333;
+  @extend %flex-double-centre;
+  flex-direction: column;
+}
+
+
+.bloc{
+  width: 300px;
+  margin: 0 30px;
+}
+
+footer h3{
+  text-align: center;
+  font-size: 40px;
+  padding-bottom: 20px;
+
+}
+footer p{
+  font-size: 22px;
+  line-height: 1.4;
+}
+
+.liste-media{
+  @extend %flex-double-centre;
+}
+
+.liste-media img{
+  width: 40px;
+  margin: 10px 10px;
+}

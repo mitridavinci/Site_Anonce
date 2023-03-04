@@ -1,0 +1,156 @@
+.titre-tarifs{
+    padding: 120px 0 20px;
+}
+
+.container-tarifs{
+    margin: 125px auto 200px;
+    width: 60%;
+    max-width: 1100px;
+    min-width: 300px;
+    height: auto;
+}
+
+.choix-tarifs{
+    margin: 0 auto;
+    height: 100px;
+    cursor: pointer;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+}
+
+.choix{
+    font-family: Confortaa, sans-serif;
+    height: 100%;
+    width: 170px;
+    outline: none;
+    border: none;
+    @extend %flex-double-centre;
+    font-size: 30px;
+    letter-spacing: 3px;
+    background: #333;
+    color: #fff;
+    cursor: pointer;
+}
+
+.choix:nth-child(1){
+    box-shadow: -5px -5px 15px rgba(0,0,0,0.2);
+    border-right: 1px solid #fff;   
+}
+
+.choix:nth-child(2){
+    box-shadow: 0px -5px 15px rgba(0,0,0,0.2);
+    border-right: 1px solid #fff;   
+}
+
+.choix:nth-child(3){
+    box-shadow: 5px -5px 15px rgba(0,0,0,0.2);
+     
+}
+
+.choix.active-choix{
+    background: #fff;
+    color: #000;
+}
+
+.tableau{
+    border-collapse: collapse;
+    width: 100%;
+    height: 700px;
+    margin: 0 auto;
+    color: #000;
+    font-size: 30px;
+    background-image: linear-gradient(45deg, rgba(255,250,233, 0.53) 0%,
+  rgba(255,250,233, 0.53) 14.286%,
+  rgba(221, 240, 216, 0.53) 14.286%, 
+  rgba(221, 240, 216, 0.53) 28.572%,
+  rgba(188, 233, 223, 0.53) 28.572%, 
+  rgba(188, 233, 223, 0.53) 42.858%,
+  rgba(156, 227, 229, 0.53) 42.858%, 
+  rgba(156, 227, 229, 0.53) 57.144%,
+  rgba(123, 220, 235, 0.53) 57.144%, 
+  rgba(123, 220, 235, 0.53) 71.42999999999999%,
+  rgba(90, 214, 242, 0.53) 71.43%, 
+  rgba(90, 214, 242, 0.53) 85.71600000000001%,
+  rgba(57, 207, 248, 0.53) 85.716%, 
+  rgba(57, 207, 248, 0.53) 100.002%),
+linear-gradient(135deg, rgb(246, 99, 200) 0%,
+   rgb(246, 99, 200) 12.5%,
+   rgb(223, 98, 196) 12.5%,
+   rgb(223, 98, 196) 25%,
+   rgb(199, 97, 192) 25%, 
+   rgb(199, 97, 192) 37.5%,
+   rgb(210,129,221) 37.5%, 
+   rgb(210,129,221) 50%,
+   rgb(229,184,255) 50%, 
+   rgb(229,184,255) 62.5%,
+   rgb(201,166,254) 62.5%, 
+   rgb(201,166,254) 75%,
+   rgb(112,97,190) 75%, 
+   rgb(112,97,190) 87.5%,
+   rgb(82, 92, 172) 87.5%, 
+   rgb(82, 92, 172) 100%);
+
+}
+th{
+    font-size: 40px;
+}
+
+td,th{
+    border: 1px solid #222;
+    padding: 8px;
+    vertical-align: middle;
+    width: 50%;
+}
+
+td{
+    padding-left: 15px; 
+}
+.panneau{
+    display: none;
+}
+
+.panneau-active{
+    display: block;
+}
+
+@media screen  and (max-width: 1200px){
+    .container-tarifs{
+        width: 90%;
+        margin: 55px auto 100px;
+
+    }
+}
+
+@media screen  and (max-width: 900px){
+    .container-tarifs{
+        width: 95%;
+    }
+    .choix-tarifs{
+        height: 100px;
+    }
+    .choix{
+        width: 150px;
+        font-size: 25px;
+    }
+}
+
+@media screen  and (max-width: 600px){
+    .container-tarifs{
+        width: 300px;
+    }
+    .choix-tarifs{
+        height: 75px;
+    }
+    .choix{
+        width: 100px;
+        font-size: 18px;
+    }
+    .tableau{
+        height: 500px;
+        font-size: 22px;
+    }
+    th{
+        font-size: 30px;
+    }
+}
